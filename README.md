@@ -4,7 +4,7 @@ JSON Parsing and quickly
 ## Context
 
 This is retroactive readme; I've not worked on this code for a while. But the ideas may be generally interesting, and in case you don't want to read old code, 
-this is a useful overview. Some of this overview is aspirational: I am not sure how gracefully the implementation handles the "Is it actually parsing" cases.
+this is a useful overview. Some of this overview is aspirational: I am sure I left it failing some test case, but I can't recall exactly what.
 
 ## TL;DR
 
