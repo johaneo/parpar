@@ -32,7 +32,9 @@ We split the input into chunks, and process each `start,end` chunk independently
 Chunks are sorted into input order, matching open-close quotation marks are identified, and any tokens inbetween and inclusive are removed from the token slices.[2]
 Lastly, we create the parse tree by matching open-close dictionary and lists, and next item with those as well. 
 
-As a visual aid, you can imagine that this input
+## A visual appeal
+
+That's a bit abstract, so let's try a small example.  As a visual aid, you can imagine this input
 
 ```
 {
@@ -48,7 +50,8 @@ is split into
   "alist": [1 ,2,
 ```
 ,
-``` 3],
+```
+3],
   "adict": { "a": "{look
 ```
 ,
@@ -56,7 +59,33 @@ is split into
 curly}" }
 }
 ```
+. From now on, we'll contract the white space a bit, and will not show the offsets we discussed above. When this is scanned for tokens, we get:
 
+```
+{  "":[,,
+```
+,
+```
+], "": { "": "{
+```
+,
+```
+}" } }
+```
+
+These tokens get reassembled into the token stream (this re-assembly is never actually done, but it's easier to see to the processes this way):
+
+```
+{  "":[,,], "": { "": "{ }" } }
+```
+
+from which can strip all matching quotes:
+
+```
+{  :[,,], : { : } }
+```
+
+**This** is the stream we can parse quickly. 
 
 
 # Notes 
