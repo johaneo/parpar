@@ -6,6 +6,10 @@ JSON Parsing and quickly
 This is retroactive readme; I've not worked on this code for a while. But the ideas may be generally interesting, and in case you don't want to read old code, 
 this is a useful overview. Some of this overview is aspirational: I am sure I left it failing some test case, but I can't recall exactly what.
 
+I was inspired to write this up because I have been seeing many successful approaches in the [1 Billion Row Challenge](https://github.com/gunnarmorling/1brc) use the input-chunking approach. 
+Indeed that is the approach I use in my in-explicably glacial python submission.  But that reminded me that I have used it here as well.
+
+
 ## TL;DR
 
 This aims to provide a library to parse large json documents quickly. 
